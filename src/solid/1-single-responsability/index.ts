@@ -1,6 +1,3 @@
-/**
- * Servicio de un producto en general
- */
 interface Product {
   id: number
   name: string
@@ -31,9 +28,6 @@ export class ProductService {
   }
 }
 
-/**
- * Servicio de un producto para hombres
- */
 type StarSoccer = "Leonel Messi" | "Cristiano Ronaldo" | "Andrea Pirlo"
 interface ProductForMen extends Product {
   startSoccer: StarSoccer
@@ -56,9 +50,6 @@ export class ProductForMenService {
   }
 }
 
-/**
- * Servicio de un producto para mujeres
- */
 type StarDisney = "Barbie" | "Malefica" | "Fiona"
 interface ProductForWoman extends Product {
   starDisney: StarDisney
@@ -81,9 +72,6 @@ export class ProductForWomanService {
   }
 }
 
-/**
- * Servicio para notificar un producto en genral
- */
 type ChannelVia = "SMS" | "WhatsApp" | "Email"
 interface ChannelType {
   via: ChannelVia
