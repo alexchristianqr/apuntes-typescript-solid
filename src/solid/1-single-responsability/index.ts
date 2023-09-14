@@ -8,6 +8,10 @@ interface Product {
 export class ProductService {
   private products: Array<Product> = []
 
+  getProducts() {
+    return this.products
+  }
+
   getProduct(id: number) {
     return this.products.find((item: Product) => item.id === id)
   }
@@ -16,12 +20,14 @@ export class ProductService {
     this.products.push(product)
   }
 
-  updateProduct(id: number) {
-    console.log("Actualizar producto", { id })
+  updateProduct(id: number, product: Product) {
+    const data = this.products.find((item: Product) => item.id === id)
+    if (!data) return
+    data.name = product?.name
   }
 
   deleteProduct(id: number) {
-    console.log("Eliminar producto", { id })
+    this.products = this.products.filter((item: Product) => item.id !== id)
   }
 }
 
@@ -45,9 +51,6 @@ export class ProductForMenService {
   }
 
   createProductMen(product: ProductForMen) {
-    product.id = 1
-    product.name = "Colonia Airblue 75ml"
-    product.startSoccer = "Leonel Messi"
     this.productService.createProduct(product)
     console.log("Crear producto para hombre", { product })
   }
@@ -73,9 +76,6 @@ export class ProductForWomanService {
   }
 
   createProductWoman(product: ProductForWoman) {
-    product.id = 1
-    product.name = "Colonia Airpink 85ml"
-    product.starDisney = "Barbie"
     this.productService.createProduct(product)
     console.log("Crear producto para mujer", { product })
   }
