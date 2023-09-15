@@ -16,16 +16,6 @@ export class ProductService {
   createProduct(product: Product) {
     this.products.push(product)
   }
-
-  updateProduct(id: number, product: Product) {
-    const data = this.products.find((item: Product) => item.id === id)
-    if (!data) return
-    data.name = product?.name
-  }
-
-  deleteProduct(id: number) {
-    this.products = this.products.filter((item: Product) => item.id !== id)
-  }
 }
 
 type StarSoccer = "Leonel Messi" | "Cristiano Ronaldo" | "Andrea Pirlo"
@@ -33,11 +23,7 @@ interface ProductForMen extends Product {
   startSoccer: StarSoccer
 }
 export class ProductForMenService {
-  private productService: ProductService
-
-  constructor(productService: ProductService) {
-    this.productService = productService
-  }
+  constructor(private productService: ProductService) {}
 
   getProduct(id: number) {
     const product = this.productService.getProduct(id)
@@ -55,11 +41,7 @@ interface ProductForWoman extends Product {
   starDisney: StarDisney
 }
 export class ProductForWomanService {
-  private productService: ProductService
-
-  constructor(productService: ProductService) {
-    this.productService = productService
-  }
+  constructor(private productService: ProductService) {}
 
   getProduct(id: number) {
     const product = this.productService.getProduct(id)
