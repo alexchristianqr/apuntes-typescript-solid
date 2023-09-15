@@ -2,6 +2,7 @@ import { ProductService, ProductForMenService, ProductForWomanService } from "./
 import { TodoService, PostService, HttpClient } from "./2-open-and-close"
 import { Honda, Tesla, Toyota, Vehicle } from "./3-liskov-substitution"
 import { TucanBird, PenguinBird, HumminBird, OstrichBird } from "./4-interface-segregation"
+import { UserService, JsonDatabaseProvider, LocalDatabaseProvider } from "./5-dependency-inversion"
 
 console.log("******************************")
 console.log("****** PRINCIPIOS SOLID ******")
@@ -57,4 +58,15 @@ console.log("******************************")
   const humminBird = new HumminBird()
   humminBird.eat()
   humminBird.fly()
+
+  console.log("--")
+  console.log("[ 5to PRINCIPIO DE INVERSIÓN DE DEPENDENCIA ]")
+  console.log("--")
+  const localDatabaseProvider = new LocalDatabaseProvider()
+  console.log(localDatabaseProvider)
+  const jsonDatabaseProvider = new JsonDatabaseProvider()
+  console.log(jsonDatabaseProvider)
+  const userService = new UserService(jsonDatabaseProvider)
+  const users = await userService.getUsers()
+  console.log({ users })
 })()
