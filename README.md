@@ -1,7 +1,7 @@
 # solid-typescript
-5 Principios SOLID
-- Single responsability (Responsabilidad única)
-- Open and close (Abierto y cerrado)
-- Liskov substitution (Sustitución de Liskov)
-- Interface segregation (Segregación de interfaz)
-- Dependency inversion (Inversión de dependencia)
+Los 5 Principios SOLID
+- **S**ingle responsability (Responsabilidad única)
+- **O**pen and close (Abierto y cerrado)
+- **L**iskov substitution (Sustitución de Liskov)
+- **I**nterface segregation (Segregación de interfaz)
+- **D**ependency inversion (Inversión de dependencia)
