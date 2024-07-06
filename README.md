@@ -1,5 +1,5 @@
 # apuntes-typescript-solid
-Utilizando typescript aplicaremos los 5 principios **SOLID**
+Utilizando typescript aplicaremos los 5 principios **SOLID**.
 
 <br>
 
